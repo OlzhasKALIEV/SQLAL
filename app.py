@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from database import db, Employee
 from datetime import datetime as DT
 from datetime import timedelta
-from datali import spisok_name, spisok_surname, city
+from datali import spisok_name, spisok_surname, city, name, surname
 import random
 
 app = Flask(__name__)
@@ -21,13 +21,11 @@ count = 0
 with app.app_context():
     db.drop_all()
     db.create_all()
-    for i in range(15):  # количество строк
-        index_1 = random.randint(1, len(spisok_name)-1)
-        index_2 = random.randint(1, len(spisok_surname) - 1)
+    for name, surname in zip(name(), surname()):  # количество строк
         db.session.add(
             Employee(
-                name_user=spisok_name[index_1],
-                surname_user=spisok_surname[index_2],
+                name_user=name,
+                surname_user=surname,
                 index_user=city(),
                 added=get_random_date()
             )

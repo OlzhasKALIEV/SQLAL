@@ -16,22 +16,45 @@ spisok_name = [
     "Спиридон",
     "Станислав",
     "Степан"
-               ]
+]
 
 spisok_surname = [
-    "Ершов",
-    "Никитин",
-    "Соболев",
-    "Рябов",
-    "Поляков",
-    "Цветков",
-    "Данилов",
-    "Жуков",
-    "Фролов",
-    "Журавлёв",
-    "Николаев"
-               ]
+    "Ларионов",
+    "Федосеев",
+    "Зимин",
+    "Пахомов",
+    "Шубин",
+    "Игнатов",
+    "Филатов",
+    "Крюков",
+    "Рогов",
+    "Кулаков",
+    "Терентьев",
+    "Артемьев",
+    "Гурьев",
+    "Зиновьев",
+    "Гришин"
+]
+def surname():
+    g = []
+    while len(g) != 10:
+        for i in range(len(spisok_surname)):
+            t = random.randint(0, len(spisok_surname) - 1)
+            if spisok_surname[t] not in g:
+                g.append(spisok_surname[t])
+        return g
 
+def name():
+    g = []
+    while len(g) != 10:
+        for i in range(len(spisok_name)):
+            t = random.randint(0, len(spisok_name) - 1)
+            if spisok_name[t] not in g:
+                g.append(spisok_name[t])
+        return g
+
+for i, n in zip(name(), surname()):
+    print(i, n)
 
 adresa_employee = {
     "г.Москва": [
@@ -46,7 +69,7 @@ adresa_employee = {
         "Авиационная улица",
         "Авиационный переулок"
     ],
-    "г.Новокузнецк":[
+    "г.Новокузнецк": [
         "Плунжерная улица",
         "Улица Победы",
         "Погрузочная улица",
