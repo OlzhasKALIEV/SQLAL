@@ -96,4 +96,3 @@ def city():
                 spisok.append(adres)
             tt = random.choice(list(adresa_employee))
         return spisok
-
