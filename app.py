@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-from flask_sqlalchemy import SQLAlchemy
 from database import db, Employee
 from datetime import datetime as DT
 from datetime import timedelta
