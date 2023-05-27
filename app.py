@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from database import db, Employee
 from datetime import datetime as DT
 from datetime import timedelta
+from datali import spisok_name, spisok_surname
 import random
 
 app = Flask(__name__)
@@ -15,37 +16,7 @@ def get_random_date():
 
 
 count = 0
-spisok_name = [
-    "Вавила",
-    "Вадим",
-    "Валентин",
-    "Валерий",
-    "Валерьян",
-    "Варлам",
-    "Варсонофий",
-    "Семён",
-    "Серафим",
-    "Сергей",
-    "Созон",
-    "Софрон",
-    "Спиридон",
-    "Станислав",
-    "Степан"
-               ]
 
-spisok_surname = [
-    "Ершов",
-    "Никитин",
-    "Соболев",
-    "Рябов",
-    "Поляков",
-    "Цветков",
-    "Данилов",
-    "Жуков",
-    "Фролов",
-    "Журавлёв",
-    "Николаев"
-               ]
 
 with app.app_context():
     db.drop_all()
