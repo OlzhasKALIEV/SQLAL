@@ -36,7 +36,7 @@ with app.app_context():
 
 @app.route("/")
 def all_center():
-    return "<h1 align=center > Hello world </h1>"
+    return render_template("layout.html")
 
 
 @app.route("/employee")
