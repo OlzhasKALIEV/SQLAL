@@ -35,6 +35,8 @@ spisok_surname = [
     "Зиновьев",
     "Гришин"
 ]
+
+
 def surname():
     g = []
     while len(g) != 10:
@@ -43,6 +45,7 @@ def surname():
             if spisok_surname[t] not in g:
                 g.append(spisok_surname[t])
         return g
+
 
 def name():
     g = []
