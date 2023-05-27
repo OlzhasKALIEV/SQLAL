@@ -21,7 +21,7 @@ count = 0
 with app.app_context():
     db.drop_all()
     db.create_all()
-    for i in range(15):
+    for i in range(15):  # количество строк
         index_1 = random.randint(1, len(spisok_name)-1)
         index_2 = random.randint(1, len(spisok_surname) - 1)
         db.session.add(
