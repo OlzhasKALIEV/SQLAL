@@ -36,10 +36,12 @@ spisok_surname = [
     "Гришин"
 ]
 
+number = random.randint(0, len(spisok_name) - 1)
+
 
 def surname():
     g = []
-    while len(g) != 10:
+    while len(g) != number:
         for i in range(len(spisok_surname)):
             t = random.randint(0, len(spisok_surname) - 1)
             if spisok_surname[t] not in g:
@@ -49,7 +51,7 @@ def surname():
 
 def name():
     g = []
-    while len(g) != 10:
+    while len(g) != number:
         for i in range(len(spisok_name)):
             t = random.randint(0, len(spisok_name) - 1)
             if spisok_name[t] not in g:
