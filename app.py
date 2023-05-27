@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from database import db, Employee
 from datetime import datetime as DT
 from datetime import timedelta
-from datali import spisok_name, spisok_surname, city, name, surname
+from datali import city, name, surname
 import random
 
 app = Flask(__name__)
