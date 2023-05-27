@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body %}
+    <h2> Все клиенты </h2>
+    {%- for i in employees %}
+        <ul>
+            <li> Имя: {{ i.name_user }} </li>
+            <li> Фамилия: {{ i.surname_user }} </li>
+            <li> Дата добавления: {{ i.added }} </li>
+        </ul>
+        <hr>
+    {%- endfor%}
+{% endblock %}

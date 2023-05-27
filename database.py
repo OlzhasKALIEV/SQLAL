@@ -4,7 +4,7 @@ from sqlalchemy import func
 db = SQLAlchemy()
 
 
-class User(db.Model):
+class Employee(db.Model):
     id_user = db.Column(db.Integer, primary_key=True)
     name_user = db.Column(db.String)
     surname_user = db.Column(db.String)
