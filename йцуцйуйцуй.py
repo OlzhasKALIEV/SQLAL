@@ -1,34 +1,37 @@
 import random
-from datetime import datetime
 
-d1 = datetime.strptime("01/01/2001", "%d/%m/%Y")
-d3 = datetime.strptime("01/01/2021", "%d/%m/%Y")
+adresa_employee = {
+    "г.Москва": [
+        "Адмирала Лазарева, улица",
+        "Адмирала Макарова, улица",
+        "Адмирала Руднева, улица",
+        "Железногорская 1-я, улица",
+    ],
+    "г.Омск": [
+        "Авангардная улица",
+        "Улица Авиагородок",
+        "Авиационная улица",
+        "Авиационный переулок"
+    ],
+    "г.Новокузнецк":[
+        "Плунжерная улица",
+        "Улица Победы",
+        "Погрузочная улица",
+        "Подольская улица",
+        "Речная улица",
+        "Ровный переулок",
+        "Улица Розы Люксембург",
+        "Российская улица",
+        "Ростовская улица"
+    ]
+}
 
-d2 = datetime.strptime("01/01/2001", "%d/%m/%Y")
-if (d1 <= d2 <= d3):
-    print(random.randint(0, 100))
 
-# start_dt = DT.strptime('01.01.2017', '%d.%m.%Y')
-# end_dt = DT.strptime('01.01.2018', '%d.%m.%Y')
-#
-# for i in range(2):
-#     print(get_random_date())
+def city():
+    tt = random.choice(list(adresa_employee))
+    for i in adresa_employee[tt]:
+        return f'{tt}, {i}'
 
 
-# spisok_surname = [
-#     "Ершов",
-#     "Никитин",
-#     "Соболев",
-#     "Рябов",
-#     "Поляков",
-#     "Цветков",
-#     "Данилов",
-#     "Жуков",
-#     "Фролов",
-#     "Журавлёв",
-#     "Николаев"
-# ]
-#
-# for i in range(5):
-#     r = random.randint(1, len(spisok_surname) - 1)
-#     print(spisok_surname[r])
+t = city()
+print(t)
