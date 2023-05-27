@@ -36,7 +36,7 @@ spisok_surname = [
     "Гришин"
 ]
 
-number = random.randint(0, len(spisok_name) - 1)
+number = random.randint(1, len(spisok_name) - 1)
 
 
 def surname():
@@ -60,19 +60,19 @@ def name():
 
 
 adresa_employee = {
-    "г.Москва": [
+    "г. Москва": [
         "Адмирала Лазарева, улица",
         "Адмирала Макарова, улица",
         "Адмирала Руднева, улица",
         "Железногорская 1-я, улица",
     ],
-    "г.Омск": [
+    "г. Омск": [
         "Авангардная улица",
         "Улица Авиагородок",
         "Авиационная улица",
         "Авиационный переулок"
     ],
-    "г.Новокузнецк": [
+    "г. Новокузнецк": [
         "Плунжерная улица",
         "Улица Победы",
         "Погрузочная улица",
@@ -91,7 +91,9 @@ def city():
     tt = random.choice(list(adresa_employee))
     while len(spisok) != number:
         for i in adresa_employee[tt]:
-            adres = tt + ', ' + i
+            number_d = random.randint(1, 200)
+            number_k = random.randint(1, 200)
+            adres = tt + ', ' + i + ' дом ' + str(number_d) + ' кв ' + str(number_k)
             if adres not in spisok:
                 spisok.append(adres)
             tt = random.choice(list(adresa_employee))
