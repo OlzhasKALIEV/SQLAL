@@ -11,8 +11,8 @@ db.init_app(app)
 
 
 def get_random_date():
-    delta = DT.strptime('01.01.2018', '%d.%m.%Y') - DT.strptime('01.01.2017', '%d.%m.%Y')
-    return DT.strptime('01.01.2017', '%d.%m.%Y') + timedelta(random.randint(0, delta.days))
+    delta = DT.strptime('01.01.2023', '%d.%m.%Y') - DT.strptime('01.01.2017', '%d.%m.%Y')
+    return DT.strptime('01.01.2016', '%d.%m.%Y') + timedelta(random.randint(0, delta.days))
 
 
 count = 0
@@ -51,7 +51,7 @@ spisok_surname = [
 with app.app_context():
     db.drop_all()
     db.create_all()
-    for i in range(10):
+    for i in range(34):
         index_1 = random.randint(1, len(spisok_name)-1)
         index_2 = random.randint(1, len(spisok_surname) - 1)
         db.session.add(
