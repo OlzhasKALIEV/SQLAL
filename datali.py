@@ -40,23 +40,23 @@ number = random.randint(0, len(spisok_name) - 1)
 
 
 def surname():
-    g = []
-    while len(g) != number:
+    spisok = []
+    while len(spisok) != number:
         for i in range(len(spisok_surname)):
             t = random.randint(0, len(spisok_surname) - 1)
-            if spisok_surname[t] not in g:
-                g.append(spisok_surname[t])
-        return g
+            if spisok_surname[t] not in spisok:
+                spisok.append(spisok_surname[t])
+        return spisok
 
 
 def name():
-    g = []
-    while len(g) != number:
+    spisok = []
+    while len(spisok) != number:
         for i in range(len(spisok_name)):
             t = random.randint(0, len(spisok_name) - 1)
-            if spisok_name[t] not in g:
-                g.append(spisok_name[t])
-        return g
+            if spisok_name[t] not in spisok:
+                spisok.append(spisok_name[t])
+        return spisok
 
 
 adresa_employee = {
@@ -87,6 +87,13 @@ adresa_employee = {
 
 
 def city():
+    spisok = []
     tt = random.choice(list(adresa_employee))
-    for i in adresa_employee[tt]:
-        return f'{tt}, {i}'
+    while len(spisok) != number:
+        for i in adresa_employee[tt]:
+            adres = tt + ', ' + i
+            if adres not in spisok:
+                spisok.append(adres)
+            tt = random.choice(list(adresa_employee))
+        return spisok
+

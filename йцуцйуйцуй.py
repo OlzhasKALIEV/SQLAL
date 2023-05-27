@@ -30,7 +30,8 @@ adresa_employee = {
 def city():
     tt = random.choice(list(adresa_employee))
     for i in adresa_employee[tt]:
-        return f'{tt}, {i}'
+        adres = tt + ', ' + i
+        return f'{adres}'
 
 
 t = city()

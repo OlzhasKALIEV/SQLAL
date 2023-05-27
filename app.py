@@ -21,12 +21,12 @@ count = 0
 with app.app_context():
     db.drop_all()
     db.create_all()
-    for name, surname in zip(name(), surname()):  # количество строк
+    for name, surname, index in zip(name(), surname(), city()):  # количество строк
         db.session.add(
             Employee(
                 name_user=name,
                 surname_user=surname,
-                index_user=city(),
+                index_user=index,
                 added=get_random_date()
             )
         )
