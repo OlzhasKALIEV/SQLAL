@@ -53,8 +53,6 @@ def name():
                 g.append(spisok_name[t])
         return g
 
-for i, n in zip(name(), surname()):
-    print(i, n)
 
 adresa_employee = {
     "г.Москва": [
